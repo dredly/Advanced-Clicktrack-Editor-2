@@ -27,12 +27,18 @@ const MetronomePage = () => {
         Tone.Transport.stop()
     }
 
+    const updateBpm = (newBpm: number) => {
+        // We need to update the bpm both in React's internal state and for the ToneJS transport
+        Tone.Transport.bpm.value = newBpm
+        setBpm(newBpm)
+    }
+
     return (
         <div>
             <h1>Metronome</h1>
             <button onClick={startAudio}>Play</button>
             <button onClick={stopAudio}>Stop</button>
-            <BpmControls bpm={bpm} setBpm={setBpm}/>
+            <BpmControls bpm={bpm} updateBpm={updateBpm}/>
         </div>
     )
 }
