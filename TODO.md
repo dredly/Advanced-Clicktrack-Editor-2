@@ -1,0 +1,1 @@
+- [x] Figure out pattern for metronome with strong and weak beat
