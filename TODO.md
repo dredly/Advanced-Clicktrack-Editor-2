@@ -1,5 +1,5 @@
 - [x] Figure out pattern for metronome with strong and weak beat
-- [ ] Implement slider for changing bpm
+- [x] Implement slider for changing bpm
     - [x] Basic functionality
-    - [ ] Display bpm in text too
-    - [ ] Select an exact bpm
+    - [x] Display bpm in text too
+    - [x] Select an exact bpm

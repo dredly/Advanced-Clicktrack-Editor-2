@@ -17,7 +17,8 @@ const MetronomePage = () => {
             const beat = getBeats(position)
             const volume = beat === 0 ? STRONG_VOLUME : WEAK_VOLUME
             synthA.triggerAttackRelease("C2", "8n", time, volume);
-        }, "4n").start(0);
+        }, "4n");
+        loop.start(0);
         Tone.Transport.bpm.value = bpm
         Tone.Transport.start()
         console.log("Tone Started")
@@ -38,6 +39,7 @@ const MetronomePage = () => {
             <h1>Metronome</h1>
             <button onClick={startAudio}>Play</button>
             <button onClick={stopAudio}>Stop</button>
+            <p>Current tempo: <strong>{bpm}</strong>bpm</p>
             <BpmControls bpm={bpm} updateBpm={updateBpm}/>
         </div>
     )
