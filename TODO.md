@@ -3,10 +3,11 @@
     - [x] Basic functionality
     - [x] Display bpm in text too
     - [x] Select an exact bpm
-- [ ] Functionality to change time signature
+- [x] Functionality to change time signature
     - [x] Form to change time signature
     - [x] Figure out weirdness with time 3/8 time signature
-    - [ ] Fix accenting when changing to n/8 time signature
+    - [x] Fix accenting when changing to n/8 time signature
+- [ ] Get exact bpm selection to update when slider updates
 - [ ] Functionality to change accents
 - [ ] Functionality to change swing percentage
 - [ ] Polythrythms

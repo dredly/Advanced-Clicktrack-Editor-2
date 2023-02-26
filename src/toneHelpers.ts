@@ -1,4 +1,3 @@
-export const getBeats = (barsBeatsSixteenths: string): number => {
-    console.log("bbs", barsBeatsSixteenths)
-    return parseInt(barsBeatsSixteenths.split(":")[1])
+export const getBars = (barsBeatsSixteenths: string): number => {
+    return parseInt(barsBeatsSixteenths.split(":")[0])
 }

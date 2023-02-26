@@ -1,6 +1,6 @@
 import * as Tone from 'tone'
-import { getBeats } from '@/toneHelpers'
-import { useState } from 'react'
+import { getBars } from '@/toneHelpers'
+import { useRef, useState } from 'react'
 import BpmControls from '@/components/forms/BpmControls'
 import TimeSignatureControls from '@/components/forms/TimeSignatureControls'
 
@@ -11,16 +11,17 @@ const MetronomePage = () => {
     const [bpm, setBpm] = useState<number>(60)
     const [timeSignature, setTimeSignature] = useState<Array<number>>([4, 4])
     const [loop, setLoop] = useState<Tone.Loop<Tone.LoopOptions> | null>(null);
+    const previousBarsRef = useRef<number>(-1);
 
     const startAudio = async () => {
         await Tone.start()
         const synthA = new Tone.FMSynth().toDestination()
         const loop = new Tone.Loop(time => {
             const position = Tone.Transport.position.toString()
-            const beat = getBeats(position)
-            console.log("beat =", beat)
-            console.log("time =", time)
-            const volume = beat === 0 ? STRONG_VOLUME : WEAK_VOLUME
+            const bars = getBars(position)
+            console.log("bars =", bars)
+            const volume = bars > previousBarsRef.current ? STRONG_VOLUME : WEAK_VOLUME
+            previousBarsRef.current = bars
             synthA.triggerAttackRelease("C2", "16n" , time, volume);
         }, timeSignature[1].toString() + "n");
         loop.start(0);
