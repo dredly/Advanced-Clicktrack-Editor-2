@@ -9,6 +9,10 @@
     - [x] Fix accenting when changing to n/8 time signature
 - [x] Get exact bpm selection to update when slider updates
 - [ ] Functionality to change accents
+    - [x] Render basic form
+    - [ ] Refactor accentInput imto its own component
+    - [ ] Make the audio playback change
 - [ ] Functionality to change swing percentage
 - [ ] Polythrythms
 - [ ] Better sounds
+- [ ] Advanced accent control (not just loud or soft)

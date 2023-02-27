@@ -3,6 +3,7 @@ import { getBars } from '@/toneHelpers'
 import { useRef, useState } from 'react'
 import BpmControls from '@/components/forms/BpmControls'
 import TimeSignatureControls from '@/components/forms/TimeSignatureControls'
+import AccentControls from '@/components/forms/AccentControls'
 
 const STRONG_VOLUME = 3
 const WEAK_VOLUME = 0.8
@@ -58,6 +59,7 @@ const MetronomePage = () => {
             <p>Current tempo: <strong>{bpm}</strong>bpm</p>
             <BpmControls bpm={bpm} updateBpm={updateBpm}/>
             <TimeSignatureControls timeSig={timeSignature} updateTimeSig={updateTimeSig}/>
+            <AccentControls numBeats={timeSignature[0]} accentedBeats={[0]} />
         </div>
     )
 }
