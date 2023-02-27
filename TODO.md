@@ -7,7 +7,7 @@
     - [x] Form to change time signature
     - [x] Figure out weirdness with time 3/8 time signature
     - [x] Fix accenting when changing to n/8 time signature
-- [ ] Get exact bpm selection to update when slider updates
+- [x] Get exact bpm selection to update when slider updates
 - [ ] Functionality to change accents
 - [ ] Functionality to change swing percentage
 - [ ] Polythrythms

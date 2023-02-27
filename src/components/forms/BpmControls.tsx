@@ -8,6 +8,7 @@ const BpmControls = ({bpm, updateBpm}: {bpm: number, updateBpm: (arg0: number) =
 
     const handleSliderChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
         updateBpm(Number(evt.target.value))
+        setExactBpm(Number(evt.target.value))
     }
 
     const handleTextChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
