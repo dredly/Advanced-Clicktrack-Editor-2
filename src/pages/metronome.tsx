@@ -13,6 +13,7 @@ const MetronomePage = () => {
     const [timeSignature, setTimeSignature] = useState<Array<number>>([4, 4])
     const [loop, setLoop] = useState<Tone.Loop<Tone.LoopOptions> | null>(null);
     const previousBarsRef = useRef<number>(-1);
+    const [accents, setAccents] = useState<Array<number>>([0])
 
     const startAudio = async () => {
         await Tone.start()
@@ -59,7 +60,9 @@ const MetronomePage = () => {
             <p>Current tempo: <strong>{bpm}</strong>bpm</p>
             <BpmControls bpm={bpm} updateBpm={updateBpm}/>
             <TimeSignatureControls timeSig={timeSignature} updateTimeSig={updateTimeSig}/>
-            <AccentControls numBeats={timeSignature[0]} accentedBeats={[0]} />
+            <AccentControls numBeats={timeSignature[0]} accentedBeats={accents} setAccents={setAccents} />
+            <h2>DEBUG ZONE</h2>
+            {accents.join(",")}
         </div>
     )
 }

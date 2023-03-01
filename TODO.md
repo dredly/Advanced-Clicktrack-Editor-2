@@ -10,7 +10,7 @@
 - [x] Get exact bpm selection to update when slider updates
 - [ ] Functionality to change accents
     - [x] Render basic form
-    - [ ] Refactor accentInput imto its own component
+    - [x] Refactor accentInput imto its own component
     - [ ] Make the audio playback change
 - [ ] Functionality to change swing percentage
 - [ ] Polythrythms
