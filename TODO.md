@@ -13,7 +13,8 @@
     - [x] Refactor accentInput imto its own component
     - [ ] Make the audio playback change
         - [x] Drive playback from accent array
-        - [ ] Dynamic update
+        - [x] Dynamic update (fix bug where changing the loop callback "lags by 1")
+        - [ ] Consider possibility of changing accents when changing time signature
 - [ ] Functionality to change swing percentage
 - [ ] Polythrythms
 - [ ] Better sounds

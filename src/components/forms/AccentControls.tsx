@@ -1,13 +1,12 @@
-import { Dispatch, SetStateAction } from "react"
 import AccentInput from "./inputs/AccentInput"
 
 interface Props {
     numBeats: number, 
     accentedBeats: number[], 
-    setAccents: Dispatch<SetStateAction<number[]>>
+    updateAccents: (arg0: number[]) => void
 }
 
-const AccentControls = ({ numBeats, accentedBeats, setAccents }: Props) => {
+const AccentControls = ({ numBeats, accentedBeats, updateAccents }: Props) => {
 
     const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault()
@@ -15,9 +14,9 @@ const AccentControls = ({ numBeats, accentedBeats, setAccents }: Props) => {
 
     const handleChange = (idx: number) => {
         if (accentedBeats.includes(idx)) {
-            setAccents(accentedBeats.filter(ab => ab !== idx))
+            updateAccents(accentedBeats.filter(ab => ab !== idx))
         } else {
-            setAccents(accentedBeats.concat(idx))
+            updateAccents(accentedBeats.concat(idx))
         }
     }
 
