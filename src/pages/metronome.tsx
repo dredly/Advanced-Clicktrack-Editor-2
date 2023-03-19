@@ -13,6 +13,7 @@ const MetronomePage = () => {
     const [timeSignature, setTimeSignature] = useState<Array<number>>([4, 4])
     const [loop, setLoop] = useState<Tone.Loop<Tone.LoopOptions> | null>(null);
     const previousBarsRef = useRef<number>(-1);
+    const beatsRef = useRef<number>(-1);
     const [accents, setAccents] = useState<Array<number>>([0])
 
     const startAudio = async () => {
@@ -21,9 +22,12 @@ const MetronomePage = () => {
         const loop = new Tone.Loop(time => {
             const position = Tone.Transport.position.toString()
             const bars = getBars(position)
-            console.log("bars =", bars)
-            const volume = bars > previousBarsRef.current ? STRONG_VOLUME : WEAK_VOLUME
+
+            const isStartingNewMeasure = bars > previousBarsRef.current;
             previousBarsRef.current = bars
+            
+            beatsRef.current = isStartingNewMeasure ? 0 : beatsRef.current + 1;
+            const volume = accents.includes(beatsRef.current) ? STRONG_VOLUME : WEAK_VOLUME;
             synthA.triggerAttackRelease("C2", "16n" , time, volume);
         }, timeSignature[1].toString() + "n");
         loop.start(0);

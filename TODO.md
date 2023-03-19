@@ -12,6 +12,8 @@
     - [x] Render basic form
     - [x] Refactor accentInput imto its own component
     - [ ] Make the audio playback change
+        - [x] Drive playback from accent array
+        - [ ] Dynamic update
 - [ ] Functionality to change swing percentage
 - [ ] Polythrythms
 - [ ] Better sounds
