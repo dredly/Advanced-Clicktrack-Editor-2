@@ -60,6 +60,11 @@ const MetronomePage = () => {
             interval: newTimeSig[1].toString() + "n"
         })
         setTimeSignature(newTimeSig)
+
+        // Check if there are redundant accents, for example an accent on the 4th beat but we are now in 3:4 time
+        if (accents.find(a => a >= newTimeSig[0])) {
+            updateAccents(accents.filter(a => a < newTimeSig[0]))
+        }
     }
 
     const updateAccents = (newAccents: number[]) => {

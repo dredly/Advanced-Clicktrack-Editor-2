@@ -14,7 +14,9 @@
     - [ ] Make the audio playback change
         - [x] Drive playback from accent array
         - [x] Dynamic update (fix bug where changing the loop callback "lags by 1")
-        - [ ] Consider possibility of changing accents when changing time signature
+        - [x] Consider possibility of changing accents when changing time signature
+        - [ ] Fix weird behaviour with accents when pausing and then resuming
+- [ ] Dont instantiate a new Synth everytime the loop callback changes
 - [ ] Functionality to change swing percentage
 - [ ] Polythrythms
 - [ ] Better sounds
